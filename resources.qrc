@@ -1,0 +1,8 @@
+<RCC>
+    <qresource prefix="/">
+        <file>resources/loadCode.ttf</file>
+        <file>resources/logo.ico</file>
+        <file>resources/translations/en.qm</file>
+        <file>resources/img.png</file>
+    </qresource>
+</RCC>
