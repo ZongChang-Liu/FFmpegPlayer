@@ -4,10 +4,13 @@
 <context>
     <name>CameraSettingPage</name>
     <message>
+        <location filename="../src/OperateWidget/CameraSettingPage.cpp" line="38"/>
+        <location filename="../src/OperateWidget/CameraSettingPage.cpp" line="130"/>
         <source>复位</source>
         <translation>Reset</translation>
     </message>
     <message>
+        <location filename="../src/OperateWidget/CameraSettingPage.cpp" line="141"/>
         <source>自动</source>
         <translation>Auto</translation>
     </message>
@@ -80,6 +83,7 @@
         <translation type="vanished">Focus</translation>
     </message>
     <message>
+        <location filename="../src/OperateWidget/CameraSettingPage.cpp" line="81"/>
         <source>%1 %2x%3</source>
         <translation type="unfinished"></translation>
     </message>
@@ -87,10 +91,12 @@
 <context>
     <name>CameraSwitchingPage</name>
     <message>
+        <location filename="../src/OperateWidget/CameraSwitchingPage.cpp" line="26"/>
         <source>相机</source>
         <translation>Camera</translation>
     </message>
     <message>
+        <location filename="../src/OperateWidget/CameraSwitchingPage.cpp" line="39"/>
         <source>格式</source>
         <translation>Format</translation>
     </message>
@@ -103,6 +109,7 @@
         <translation type="vanished">Record</translation>
     </message>
     <message>
+        <location filename="../src/OperateWidget/CameraSwitchingPage.cpp" line="54"/>
         <source>分辨率</source>
         <translation>Resolution</translation>
     </message>
@@ -110,30 +117,37 @@
 <context>
     <name>ElaCalendarTitleModel</name>
     <message>
+        <location filename="../3rdparty/ElaWidgetTools/ElaWidgetTools/DeveloperComponents/ElaCalendarTitleModel.cpp" line="25"/>
         <source>日</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="../3rdparty/ElaWidgetTools/ElaWidgetTools/DeveloperComponents/ElaCalendarTitleModel.cpp" line="29"/>
         <source>一</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="../3rdparty/ElaWidgetTools/ElaWidgetTools/DeveloperComponents/ElaCalendarTitleModel.cpp" line="33"/>
         <source>二</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="../3rdparty/ElaWidgetTools/ElaWidgetTools/DeveloperComponents/ElaCalendarTitleModel.cpp" line="37"/>
         <source>三</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="../3rdparty/ElaWidgetTools/ElaWidgetTools/DeveloperComponents/ElaCalendarTitleModel.cpp" line="41"/>
         <source>四</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="../3rdparty/ElaWidgetTools/ElaWidgetTools/DeveloperComponents/ElaCalendarTitleModel.cpp" line="45"/>
         <source>五</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="../3rdparty/ElaWidgetTools/ElaWidgetTools/DeveloperComponents/ElaCalendarTitleModel.cpp" line="49"/>
         <source>六</source>
         <translation type="unfinished"></translation>
     </message>
@@ -141,10 +155,12 @@
 <context>
     <name>ElaDoubleSpinBox</name>
     <message>
+        <location filename="../3rdparty/ElaWidgetTools/ElaWidgetTools/ElaDoubleSpinBox.cpp" line="53"/>
         <source>增加</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="../3rdparty/ElaWidgetTools/ElaWidgetTools/ElaDoubleSpinBox.cpp" line="55"/>
         <source>减少</source>
         <translation type="unfinished"></translation>
     </message>
@@ -152,30 +168,37 @@
 <context>
     <name>ElaDoubleSpinBoxPrivate</name>
     <message>
+        <location filename="../3rdparty/ElaWidgetTools/ElaWidgetTools/private/ElaDoubleSpinBoxPrivate.cpp" line="28"/>
         <source>撤销</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="../3rdparty/ElaWidgetTools/ElaWidgetTools/private/ElaDoubleSpinBoxPrivate.cpp" line="32"/>
         <source>恢复</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="../3rdparty/ElaWidgetTools/ElaWidgetTools/private/ElaDoubleSpinBoxPrivate.cpp" line="40"/>
         <source>剪切</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="../3rdparty/ElaWidgetTools/ElaWidgetTools/private/ElaDoubleSpinBoxPrivate.cpp" line="45"/>
         <source>复制</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="../3rdparty/ElaWidgetTools/ElaWidgetTools/private/ElaDoubleSpinBoxPrivate.cpp" line="51"/>
         <source>粘贴</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="../3rdparty/ElaWidgetTools/ElaWidgetTools/private/ElaDoubleSpinBoxPrivate.cpp" line="58"/>
         <source>删除</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="../3rdparty/ElaWidgetTools/ElaWidgetTools/private/ElaDoubleSpinBoxPrivate.cpp" line="73"/>
         <source>全选</source>
         <translation type="unfinished"></translation>
     </message>
@@ -183,30 +206,37 @@
 <context>
     <name>ElaLineEdit</name>
     <message>
+        <location filename="../3rdparty/ElaWidgetTools/ElaWidgetTools/ElaLineEdit.cpp" line="128"/>
         <source>撤销</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="../3rdparty/ElaWidgetTools/ElaWidgetTools/ElaLineEdit.cpp" line="132"/>
         <source>恢复</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="../3rdparty/ElaWidgetTools/ElaWidgetTools/ElaLineEdit.cpp" line="140"/>
         <source>剪切</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="../3rdparty/ElaWidgetTools/ElaWidgetTools/ElaLineEdit.cpp" line="145"/>
         <source>复制</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="../3rdparty/ElaWidgetTools/ElaWidgetTools/ElaLineEdit.cpp" line="151"/>
         <source>粘贴</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="../3rdparty/ElaWidgetTools/ElaWidgetTools/ElaLineEdit.cpp" line="158"/>
         <source>删除</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="../3rdparty/ElaWidgetTools/ElaWidgetTools/ElaLineEdit.cpp" line="173"/>
         <source>全选</source>
         <translation type="unfinished"></translation>
     </message>
@@ -214,54 +244,67 @@
 <context>
     <name>ElaScrollBar</name>
     <message>
+        <location filename="../3rdparty/ElaWidgetTools/ElaWidgetTools/ElaScrollBar.cpp" line="196"/>
         <source>滚动到此处</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="../3rdparty/ElaWidgetTools/ElaWidgetTools/ElaScrollBar.cpp" line="199"/>
         <source>左边缘</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="../3rdparty/ElaWidgetTools/ElaWidgetTools/ElaScrollBar.cpp" line="199"/>
         <source>顶端</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="../3rdparty/ElaWidgetTools/ElaWidgetTools/ElaScrollBar.cpp" line="201"/>
         <source>右边缘</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="../3rdparty/ElaWidgetTools/ElaWidgetTools/ElaScrollBar.cpp" line="201"/>
         <source>底部</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="../3rdparty/ElaWidgetTools/ElaWidgetTools/ElaScrollBar.cpp" line="204"/>
         <source>向左翻页</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="../3rdparty/ElaWidgetTools/ElaWidgetTools/ElaScrollBar.cpp" line="204"/>
         <source>向上翻页</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="../3rdparty/ElaWidgetTools/ElaWidgetTools/ElaScrollBar.cpp" line="206"/>
         <source>向右翻页</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="../3rdparty/ElaWidgetTools/ElaWidgetTools/ElaScrollBar.cpp" line="206"/>
         <source>向下翻页</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="../3rdparty/ElaWidgetTools/ElaWidgetTools/ElaScrollBar.cpp" line="209"/>
         <source>向左滚动</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="../3rdparty/ElaWidgetTools/ElaWidgetTools/ElaScrollBar.cpp" line="209"/>
         <source>向上滚动</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="../3rdparty/ElaWidgetTools/ElaWidgetTools/ElaScrollBar.cpp" line="211"/>
         <source>向右滚动</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="../3rdparty/ElaWidgetTools/ElaWidgetTools/ElaScrollBar.cpp" line="211"/>
         <source>向下滚动</source>
         <translation type="unfinished"></translation>
     </message>
@@ -269,10 +312,12 @@
 <context>
     <name>ElaSpinBox</name>
     <message>
+        <location filename="../3rdparty/ElaWidgetTools/ElaWidgetTools/ElaSpinBox.cpp" line="55"/>
         <source>增加</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="../3rdparty/ElaWidgetTools/ElaWidgetTools/ElaSpinBox.cpp" line="57"/>
         <source>减少</source>
         <translation type="unfinished"></translation>
     </message>
@@ -280,30 +325,37 @@
 <context>
     <name>ElaSpinBoxPrivate</name>
     <message>
+        <location filename="../3rdparty/ElaWidgetTools/ElaWidgetTools/private/ElaSpinBoxPrivate.cpp" line="28"/>
         <source>撤销</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="../3rdparty/ElaWidgetTools/ElaWidgetTools/private/ElaSpinBoxPrivate.cpp" line="32"/>
         <source>恢复</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="../3rdparty/ElaWidgetTools/ElaWidgetTools/private/ElaSpinBoxPrivate.cpp" line="40"/>
         <source>剪切</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="../3rdparty/ElaWidgetTools/ElaWidgetTools/private/ElaSpinBoxPrivate.cpp" line="45"/>
         <source>复制</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="../3rdparty/ElaWidgetTools/ElaWidgetTools/private/ElaSpinBoxPrivate.cpp" line="51"/>
         <source>粘贴</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="../3rdparty/ElaWidgetTools/ElaWidgetTools/private/ElaSpinBoxPrivate.cpp" line="58"/>
         <source>删除</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="../3rdparty/ElaWidgetTools/ElaWidgetTools/private/ElaSpinBoxPrivate.cpp" line="73"/>
         <source>全选</source>
         <translation type="unfinished"></translation>
     </message>
@@ -346,34 +398,42 @@
 <context>
     <name>ImageCapturePage</name>
     <message>
+        <location filename="../src/OperateWidget/ImageCapturePage.cpp" line="27"/>
         <source>拍照</source>
         <translation>Capture</translation>
     </message>
     <message>
+        <location filename="../src/OperateWidget/ImageCapturePage.cpp" line="30"/>
         <source>录像</source>
         <translation>Record</translation>
     </message>
     <message>
+        <location filename="../src/OperateWidget/ImageCapturePage.cpp" line="42"/>
         <source>路径</source>
         <translation>Path</translation>
     </message>
     <message>
+        <location filename="../src/OperateWidget/ImageCapturePage.cpp" line="62"/>
         <source>打开</source>
         <translation>Open</translation>
     </message>
     <message>
+        <location filename="../src/OperateWidget/ImageCapturePage.cpp" line="57"/>
         <source>设置</source>
         <translation>Setting</translation>
     </message>
     <message>
+        <location filename="../src/OperateWidget/ImageCapturePage.cpp" line="117"/>
         <source>Open Directory</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="../src/OperateWidget/ImageCapturePage.cpp" line="129"/>
         <source>Open File</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="../src/OperateWidget/ImageCapturePage.cpp" line="129"/>
         <source>Images (*.png *.jpg *.tiff *.mp4)</source>
         <translation type="unfinished"></translation>
     </message>
@@ -389,6 +449,7 @@
         <translation type="vanished">View</translation>
     </message>
     <message>
+        <location filename="../MyMainWindows.cpp" line="217"/>
         <source>相机设置</source>
         <translation>Camera Switching</translation>
     </message>
@@ -397,78 +458,106 @@
         <translation type="vanished">Camera Setting</translation>
     </message>
     <message>
+        <location filename="../MyMainWindows.cpp" line="219"/>
+        <source>相机参数设置</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../MyMainWindows.cpp" line="343"/>
         <source>截图失败</source>
         <translation>Screenshot failed</translation>
     </message>
     <message>
+        <location filename="../MyMainWindows.cpp" line="343"/>
+        <location filename="../MyMainWindows.cpp" line="394"/>
         <source>请检查路径或者权限</source>
         <translation>Please check the path or permissions</translation>
     </message>
     <message>
+        <location filename="../MyMainWindows.cpp" line="347"/>
         <source>截图成功</source>
         <translation>Screenshot successful</translation>
     </message>
     <message>
+        <location filename="../MyMainWindows.cpp" line="347"/>
         <source>保存路径:</source>
         <translation>Save Path:</translation>
     </message>
     <message>
+        <location filename="../MyMainWindows.cpp" line="356"/>
         <source>请检查相机设备</source>
         <translation>Please check the camera</translation>
     </message>
     <message>
+        <location filename="../MyMainWindows.cpp" line="356"/>
         <source>播放错误</source>
         <translation>Playing failed</translation>
     </message>
     <message>
+        <location filename="../MyMainWindows.cpp" line="362"/>
+        <location filename="../MyMainWindows.cpp" line="400"/>
         <source>初始化中</source>
         <translation>Initializing</translation>
     </message>
     <message>
+        <location filename="../MyMainWindows.cpp" line="362"/>
         <source>请稍等</source>
         <translation>Please wait</translation>
     </message>
     <message>
+        <location filename="../MyMainWindows.cpp" line="368"/>
         <source>播放成功</source>
         <translation>Playing successful</translation>
     </message>
     <message>
+        <location filename="../MyMainWindows.cpp" line="368"/>
+        <location filename="../MyMainWindows.cpp" line="421"/>
         <source>请查看视频</source>
         <translation>Please view the video</translation>
     </message>
     <message>
+        <location filename="../MyMainWindows.cpp" line="376"/>
         <source>播放停止</source>
         <translation>Playing stopped</translation>
     </message>
     <message>
+        <location filename="../MyMainWindows.cpp" line="376"/>
         <source>设备已关闭</source>
         <translation>Device shutdown</translation>
     </message>
     <message>
+        <location filename="../MyMainWindows.cpp" line="394"/>
         <source>录制错误</source>
         <translation>Recording error</translation>
     </message>
     <message>
+        <location filename="../MyMainWindows.cpp" line="400"/>
+        <location filename="../MyMainWindows.cpp" line="406"/>
         <source>请稍等...</source>
         <translation>Please wait...</translation>
     </message>
     <message>
+        <location filename="../MyMainWindows.cpp" line="406"/>
         <source>录制中</source>
         <translation>Recording</translation>
     </message>
     <message>
+        <location filename="../MyMainWindows.cpp" line="413"/>
         <source>录制停止</source>
         <translation>Recording stopped</translation>
     </message>
     <message>
+        <location filename="../MyMainWindows.cpp" line="413"/>
         <source>录制已结束</source>
         <translation>Recording ends</translation>
     </message>
     <message>
+        <location filename="../MyMainWindows.cpp" line="421"/>
         <source>录制成功</source>
         <translation>Recording successful</translation>
     </message>
     <message>
+        <location filename="../MyMainWindows.cpp" line="148"/>
         <source>语言</source>
         <translation>language</translation>
     </message>
@@ -485,29 +574,30 @@
         <translation type="vanished">JOC</translation>
     </message>
     <message>
+        <location filename="../MyMainWindows.cpp" line="218"/>
         <source>图像捕捉设置</source>
         <translation>Capture Setting</translation>
     </message>
     <message>
+        <location filename="../MyMainWindows.cpp" line="39"/>
         <source>FFmpegPlayer</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="../MyMainWindows.cpp" line="190"/>
         <source>系统初始化成功! </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>相机参数设置</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>QObject</name>
     <message>
+        <location filename="../main.cpp" line="37"/>
         <source>警告</source>
         <translation>Warning</translation>
     </message>
     <message>
+        <location filename="../main.cpp" line="37"/>
         <source>程序正在运行！</source>
         <translation>The program is already running ！</translation>
     </message>

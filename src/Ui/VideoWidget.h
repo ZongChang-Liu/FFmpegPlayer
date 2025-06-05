@@ -7,34 +7,32 @@
 #ifndef VIDEO_WIDGET_H
 #define VIDEO_WIDGET_H
 
-#include <QMutex>
 #include <QWidget>
 extern "C" {
-    #include <libavutil/frame.h>
+#include <libavutil/frame.h>
 }
+class VideoView;
 
 class VideoWidget final : public QWidget {
     Q_OBJECT
 public:
     explicit VideoWidget(QWidget *parent = nullptr);
     ~VideoWidget() override;
-    Q_SLOT void onUpdateFrame(const AVFrame* frame);
-    Q_SLOT void onUpdateImage(const QImage& image);
-    void setRecordFlag(bool flag);
+
     int getImage(QImage &image) const;
+
+    void setRecordFlag(bool flag) const;
+    void setLiveFlag(bool flag) const;
+    void setPlayFlag(bool flag) const;
+
+    // Q_SLOT void onUpdateImage(const QImage& image) const;
+    Q_SLOT void onUpdateFrame(const AVFrame* frame) const;
+    Q_SLOT void onAspectRatioChanged(double aspectRatio);
 protected:
-    void paintEvent(QPaintEvent *event) override;
     void resizeEvent(QResizeEvent* event) override;
 private:
-    bool m_recordFlag{false};
-    bool m_showRecordFlag{false};
-
-    QImage m_image;
-    int m_margin = 12;
-    int m_radius = 8;
-    int m_showWidth = 0;
-    int m_showHeight = 0;
-    QRect m_showRect;
+    VideoView *m_videoView{nullptr};
+    double m_aspectRatio{1920.0 / 1080.0};
 
     qint64 m_lastFrameTime{0};
     int m_frameCount{0};

@@ -34,17 +34,17 @@ set(CMAKE_AUTORCC ON)
 set(CMAKE_AUTOUIC ON)
 
 set(FFmpeg_PREFIX_DIR "C:/ffmpeg6.1.1")
-set(QT_PREFIX_DIR "C:/Qt5/Qt5.15.2/5.15.2/msvc2019_64")
+#set(QT_PREFIX_DIR "C:/Qt5/Qt5.15.2/5.15.2/msvc2019_64")
 
 if (NOT DEFINED FFmpeg_PREFIX_DIR)
     message(FATAL_ERROR "Please set FFmpeg_PREFIX_DIR")
 endif ()
-if (NOT DEFINED QT_PREFIX_DIR)
-    message(FATAL_ERROR "Please set QT_PREFIX_DIR")
-endif ()
-set(CMAKE_PREFIX_PATH "${QT_PREFIX_DIR}/lib/cmake")
+#if (NOT DEFINED QT_PREFIX_DIR)
+#    message(FATAL_ERROR "Please set QT_PREFIX_DIR")
+#endif ()
+#set(CMAKE_PREFIX_PATH "${QT_PREFIX_DIR}/lib/cmake")
 message(STATUS "FFmpeg_PREFIX_DIR: ${FFmpeg_PREFIX_DIR}")
-message(STATUS "QT_PREFIX_DIR: ${QT_PREFIX_DIR}")
+#message(STATUS "QT_PREFIX_DIR: ${QT_PREFIX_DIR}")
 
 set(CMAKE_PREFIX_PATH "${QT_PREFIX_DIR}/lib/cmake")
 set(QT_MODULES

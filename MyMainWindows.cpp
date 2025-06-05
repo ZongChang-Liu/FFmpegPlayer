@@ -15,6 +15,7 @@
 #include <QCoreApplication>
 #include <QTranslator>
 #include <QLocale>
+#include <QActionGroup>
 
 #include <ElaDockWidget.h>
 #include <ElaMessageBar.h>
