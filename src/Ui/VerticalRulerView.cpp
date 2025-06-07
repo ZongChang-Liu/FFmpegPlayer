@@ -16,7 +16,6 @@ VerticalRulerView::VerticalRulerView(QWidget* parent) : QWidget(parent)
     m_cursorRect = QRect(m_pointerSize, m_pointerSize + 2,
                                width() - 3 - m_pointerSize,
                                0);
-    m_lastPos = QPoint(m_backgroundRect.left() + m_backgroundRect.width() / 2, m_backgroundRect.top() + m_backgroundRect.height() - 1);
     m_mousePos = QPoint(m_backgroundRect.left() + m_backgroundRect.width() / 2, m_backgroundRect.top() + m_backgroundRect.height() - 1);
     update();
 }
@@ -27,21 +26,20 @@ void VerticalRulerView::initRuler(const int minValue, const int maxValue, const 
     m_maxValue = maxValue;
     m_curValue = curValue;
 
-    double ratio = static_cast<double>(m_curValue - m_minValue) / (m_maxValue - m_minValue);
-    ratio = qBound(0.0, ratio, 1.0); // Ensure ratio is between 0 and 1
-    m_lastPos.setY(static_cast<int>(m_backgroundRect.top() + (1.0 - ratio) * m_backgroundRect.height()));\
-
-
-    if (m_lastPos.y() < m_backgroundRect.top())
-    {
-        m_lastPos.setY(m_backgroundRect.top());
-    }
-    else if (m_lastPos.y() > m_backgroundRect.bottom())
-    {
-        m_lastPos.setY(m_backgroundRect.bottom());
-    }
     Q_EMIT sigValueChanged(m_curValue);
     update();
+}
+
+void VerticalRulerView::setFontSize(const int fontSize)
+{
+    m_fontSize = fontSize;
+    update();
+}
+
+void VerticalRulerView::setPointerSize(const int pointerSize)
+{
+    m_pointerSize = pointerSize;
+    resizeEvent(nullptr);
 }
 
 void VerticalRulerView::setThemeMode(const ElaThemeType::ThemeMode themeMode)
@@ -56,25 +54,16 @@ void VerticalRulerView::resizeEvent(QResizeEvent* event)
                                width() - 2 - m_pointerSize,
                                height() - 2 - 2 * m_pointerSize);
 
+    double ratio = static_cast<double>(m_curValue - m_minValue) / (m_maxValue - m_minValue);
+    ratio = qBound(0.0, ratio, 1.0);
+    const double cursorRectY = m_backgroundRect.top() + (1.0 - ratio) * m_backgroundRect.height();
+
+
     m_cursorRect = QRect(m_pointerSize, m_pointerSize + 2,
                                width() - 3 - m_pointerSize,
-                               m_lastPos.y());
-
-    double ratio = static_cast<double>(m_curValue - m_minValue) / (m_maxValue - m_minValue);
-    ratio = qBound(0.0, ratio, 1.0); // Ensure ratio is between 0 and 1
-    m_lastPos.setY(static_cast<int>(m_backgroundRect.top() + (1.0 - ratio) * m_backgroundRect.height()));
-
-    if (m_lastPos.y() < m_backgroundRect.top())
-    {
-        m_lastPos.setY(m_backgroundRect.top());
-    }
-    else if (m_lastPos.y() > m_backgroundRect.bottom())
-    {
-        m_lastPos.setY(m_backgroundRect.bottom());
-    }
-
-    m_mousePos.setY(m_lastPos.y());
-    m_cursorRect.setHeight(m_lastPos.y() - m_backgroundRect.top());
+                               cursorRectY - m_backgroundRect.top());
+    m_cursorRect.setHeight(cursorRectY - m_backgroundRect.top());
+    m_mousePos.setY(cursorRectY);
 
     QWidget::resizeEvent(event);
 }
@@ -107,7 +96,7 @@ void VerticalRulerView::paintEvent(QPaintEvent* event)
     // Draw the Scale
     QFont font;
     font.setFamily("Microsoft YaHei");
-    font.setPixelSize(10);
+    font.setPixelSize(m_fontSize);
 
     painter.setFont(font);
     if (m_isHover)
@@ -126,7 +115,7 @@ void VerticalRulerView::paintEvent(QPaintEvent* event)
         if (num % 10 == 0 && num != 100 && num != 0)
         {
             painter.drawLine(m_pointerSize + 1, startY, m_pointerSize + 16, startY);
-            painter.drawText(m_pointerSize + 21, startY + 4, QString::number(num) + "%");
+            painter.drawText(m_pointerSize + 20, startY + 4, QString::number(num));
         }
         else if (num % 5 == 0)
         {
@@ -141,9 +130,9 @@ void VerticalRulerView::paintEvent(QPaintEvent* event)
     }
     painter.drawLine(m_pointerSize, m_backgroundRect.top(), m_pointerSize, m_backgroundRect.bottom());
     painter.drawLine(m_pointerSize + 1, m_backgroundRect.top(), m_pointerSize + 16, m_backgroundRect.top());
-    painter.drawText(m_pointerSize + 21, m_backgroundRect.top() + 13, "100%");
+    painter.drawText(m_pointerSize + 20, m_backgroundRect.top() + 13, "100%");
     painter.drawLine(m_pointerSize + 1, m_backgroundRect.bottom(), m_pointerSize + 16, m_backgroundRect.bottom());
-    painter.drawText(m_pointerSize + 21, m_backgroundRect.bottom() - 3, "0%");
+    painter.drawText(m_pointerSize + 20, m_backgroundRect.bottom() - 3, "0");
 
 
 
@@ -165,21 +154,19 @@ void VerticalRulerView::mousePressEvent(QMouseEvent* event)
         m_isPressed = true;
         if (event->pos().y() < m_backgroundRect.top())
         {
-            m_lastPos.setY(m_backgroundRect.top());
+            m_mousePos.setY(m_backgroundRect.top());
         }
         else if (event->pos().y() > m_backgroundRect.bottom())
         {
-            m_lastPos.setY(m_backgroundRect.bottom());
+            m_mousePos.setY(m_backgroundRect.bottom());
         }
         else
         {
-            m_lastPos = event->pos();
+            m_mousePos = event->pos();
         }
 
-        m_cursorRect.setHeight(m_lastPos.y() - m_backgroundRect.top());
-
-        m_mousePos = m_lastPos;
-        m_curValue = static_cast<int>(m_maxValue - (m_maxValue - m_minValue) * (1.0 * (m_lastPos.y() - m_backgroundRect.top()) / m_backgroundRect.height()));
+        m_cursorRect.setHeight(m_mousePos.y() - m_backgroundRect.top());
+        m_curValue = static_cast<int>(m_maxValue - (m_maxValue - m_minValue) * (1.0 * (m_mousePos.y() - m_backgroundRect.top()) / m_backgroundRect.height()));
 
         update();
     }
@@ -195,66 +182,39 @@ void VerticalRulerView::mouseReleaseEvent(QMouseEvent* event)
 
 void VerticalRulerView::mouseMoveEvent(QMouseEvent* event)
 {
-    if (m_backgroundRect.contains(event->pos()))
+    m_isHover = m_backgroundRect.contains(event->pos());
+    if (m_isHover)
     {
-        if (!m_isHover)
-        {
-            m_isHover = true;
-        }
-    }
-    else if (m_isHover)
-    {
-        m_isHover = false;
+        m_mousePos = event->pos();
     }
 
     if (m_isPressed)
     {
-        if (event->pos().y() < m_backgroundRect.top())
-        {
-            m_lastPos.setY(m_backgroundRect.top());
-        }
-        else if (event->pos().y() > m_backgroundRect.bottom())
-        {
-            m_lastPos.setY(m_backgroundRect.bottom());
-        }
-        else
-        {
-            m_lastPos = event->pos();
-        }
-        m_cursorRect.setHeight(m_lastPos.y() - m_backgroundRect.top());
-        m_curValue = static_cast<int>(m_maxValue - (m_maxValue - m_minValue) * (1.0 * (m_lastPos.y() - m_backgroundRect.top()) / m_backgroundRect.height()));
+        m_cursorRect.setHeight(m_mousePos.y() - m_backgroundRect.top());
+        m_curValue = static_cast<int>(m_maxValue - (m_maxValue - m_minValue) * (1.0 * (m_mousePos.y() - m_backgroundRect.top()) / m_backgroundRect.height()));
         Q_EMIT sigValueChanged(m_curValue);
-    }
-
-    if (event->pos().y() < m_backgroundRect.top())
-    {
-        m_mousePos.setY(m_backgroundRect.top());
-    }
-    else if (event->pos().y() > m_backgroundRect.bottom())
-    {
-        m_mousePos.setY(m_backgroundRect.bottom());
-    }
-    else
-    {
-        m_mousePos = event->pos();
     }
 
     update();
     QWidget::mouseMoveEvent(event);
 }
 
+void VerticalRulerView::leaveEvent(QEvent* event)
+{
+    double ratio = static_cast<double>(m_curValue - m_minValue) / (m_maxValue - m_minValue);
+    ratio = qBound(0.0, ratio, 1.0);
+    const double cursorRectY = m_backgroundRect.top() + (1.0 - ratio) * m_backgroundRect.height();
+    if (m_mousePos.y() != cursorRectY)
+    {
+        m_mousePos.setY(cursorRectY);
+        update();
+    }
+    QWidget::leaveEvent(event);
+}
+
 void VerticalRulerView::wheelEvent(QWheelEvent* event)
 {
-    if (event->angleDelta().y() > 0)
-    {
-        m_curValue += 1;
-    }
-    else
-    {
-        m_curValue -= 1;
-    }
-
-
+    m_curValue = event->angleDelta().y() > 0 ? m_curValue + 1 : m_curValue - 1;
     if (m_curValue < m_minValue)
     {
         m_curValue = m_minValue;
@@ -265,19 +225,9 @@ void VerticalRulerView::wheelEvent(QWheelEvent* event)
     }
 
     double ratio = static_cast<double>(m_curValue - m_minValue) / (m_maxValue - m_minValue);
-    ratio = qBound(0.0, ratio, 1.0); // Ensure ratio is between 0 and 1
-    m_lastPos.setY(static_cast<int>(m_backgroundRect.top() + (1.0 - ratio) * m_backgroundRect.height()));
-
-
-    if (m_lastPos.y() < m_backgroundRect.top())
-    {
-        m_lastPos.setY(m_backgroundRect.top());
-    }
-    else if (m_lastPos.y() > m_backgroundRect.bottom())
-    {
-        m_lastPos.setY(m_backgroundRect.bottom());
-    }
-    m_cursorRect.setHeight(m_lastPos.y() - m_backgroundRect.top());
+    ratio = qBound(0.0, ratio, 1.0);
+    const double cursorRectY = m_backgroundRect.top() + (1.0 - ratio) * m_backgroundRect.height();
+    m_cursorRect.setHeight(cursorRectY - m_backgroundRect.top());
     update();
     QWidget::wheelEvent(event);
     event->accept();

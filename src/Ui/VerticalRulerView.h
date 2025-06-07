@@ -18,6 +18,9 @@ public:
     ~VerticalRulerView() override = default;
 
     void initRuler(int minValue, int maxValue, int curValue);
+    void setFontSize(int fontSize);
+    void setPointerSize(int pointerSize);
+
     Q_SLOT void setThemeMode(ElaThemeType::ThemeMode themeMode);
 
     Q_SIGNALS:
@@ -28,17 +31,18 @@ protected:
     void mousePressEvent(QMouseEvent *event) override;
     void mouseReleaseEvent(QMouseEvent *event) override;
     void mouseMoveEvent(QMouseEvent *event) override;
+    void leaveEvent(QEvent *event) override;
     void wheelEvent(QWheelEvent *event) override;
 private:
     ElaThemeType::ThemeMode m_themeMode = ElaThemeType::Light;
     int m_pointerSize{10};
-    bool m_isHover{false};
+    int m_fontSize{10};
 
     QRect m_backgroundRect;
     QRect m_cursorRect;
 
     bool m_isPressed{false};
-    QPoint m_lastPos;
+    bool m_isHover{false};
     QPoint m_mousePos;
 
     int m_curValue{0};
