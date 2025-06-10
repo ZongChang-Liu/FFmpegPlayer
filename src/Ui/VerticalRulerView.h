@@ -17,6 +17,9 @@ public:
     explicit  VerticalRulerView(QWidget *parent = nullptr);
     ~VerticalRulerView() override = default;
 
+    void setValue(int value);
+    void setRange(int min, int max);
+
     void initRuler(int minValue, int maxValue, int curValue);
     void setFontSize(int fontSize);
     void setPointerSize(int pointerSize);
