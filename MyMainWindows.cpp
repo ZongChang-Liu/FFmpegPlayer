@@ -29,7 +29,7 @@
 #include "OperateWidget/ImageCapturePage.h"
 #include "FFmpeg/FFmpegPlayer.h"
 #include "FFmpeg/FFmpegRecorder.h"
-#include "Ui/ToolWidget.h"
+#include "Ui/ToolScrollWidget.h"
 #include "Ui/VideoWidget.h"
 
 MyMainWindows::MyMainWindows(QWidget* parent) : ElaWindow(parent)
@@ -203,7 +203,7 @@ void MyMainWindows::initContentLayout()
     addPageNode("Main", m_contentWidget, ElaIconType::House);
 
     m_videoWidget = new VideoWidget(this);
-    m_toolWidget = new ToolWidget(this);
+    m_toolWidget = new ToolScrollWidget(this);
     m_toolWidget->setFixedWidth(300);
 
     layout->addWidget(m_videoWidget,4);

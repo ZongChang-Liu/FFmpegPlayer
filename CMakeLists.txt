@@ -61,7 +61,6 @@ set(TS_FILES "translations/en.ts"
 )
 set_source_files_properties(${TS_FILES} PROPERTIES OUTPUT_LOCATION "${CMAKE_SOURCE_DIR}/resources/translations")
 if (${QT_VERSION_MAJOR} GREATER_EQUAL 6)
-    qt_create_translation(QM_FILES "${CMAKE_SOURCE_DIR}" ${TS_FILES})
 else ()
     qt_create_translation(QM_FILES "${CMAKE_SOURCE_DIR}" ${TS_FILES})
 endif ()

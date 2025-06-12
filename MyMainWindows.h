@@ -29,7 +29,7 @@ class FFmpegRecorder;
 class CameraSwitchingPage;
 class CameraSettingPage;
 class ImageCapturePage;
-class ToolWidget;
+class ToolScrollWidget;
 
 class MyMainWindows final : public ElaWindow {
 Q_OBJECT
@@ -69,7 +69,7 @@ private:
     FFmpegPlayer *m_ffmpegPlayer{nullptr};
     FFmpegRecorder *m_ffmpegRecorder{nullptr};
     VideoWidget *m_videoWidget{nullptr};
-    ToolWidget *m_toolWidget{nullptr};
+    ToolScrollWidget *m_toolWidget{nullptr};
 
     ImageCapturePage *m_imageCapturePage{nullptr};
     CameraSwitchingPage *m_cameraSwitchingPage{nullptr};
